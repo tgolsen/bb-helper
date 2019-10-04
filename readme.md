@@ -1,4 +1,4 @@
-# <img src="source/icon.png" width="45" align="left"> BB Helper
+# <img src="source/icon.jpg" width="45" align="left"> BB Helper
 
 > Browser extension that adds useful features
 

@@ -85,12 +85,12 @@ const globalReady: Promise<RGHOptions> = new Promise(async resolve => {
 		console.warn('%cRefined GitHub%c is only expected to work when you’re logged in to GitHub.', 'font-weight: bold', '');
 	}
 
-	if (select.exists('html.refined-github')) {
+	if (select.exists('html.bb-helper')) {
 		console.warn('Refined GitHub has been loaded twice. If you didn’t install the developer version, this may be a bug. Please report it to: https://github.com/sindresorhus/refined-github/issues/565');
 		return;
 	}
 
-	document.documentElement.classList.add('refined-github');
+	document.documentElement.classList.add('bb-helper');
 
 	// Options defaults
 	const options = await optionsStorage.getAll();

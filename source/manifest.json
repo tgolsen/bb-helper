@@ -1,16 +1,10 @@
 {
-	"name": "Refined GitHub",
+	"name": "BB Helper",
 	"version": "0.0.0",
-	"description": "Simplifies the GitHub interface and adds useful features",
-	"homepage_url": "https://github.com/sindresorhus/refined-github",
+	"description": "Useful stuff for bb devs",
+	"homepage_url": "https://github.com/tgolsen/bb-helper",
 	"manifest_version": 2,
 	"minimum_chrome_version": "68",
-	"applications": {
-		"gecko": {
-			"id": "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}",
-			"strict_min_version": "61.0"
-		}
-	},
 	"permissions": [
 		"storage",
 		"contextMenus",
@@ -19,14 +13,14 @@
 		"https://api.github.com/*"
 	],
 	"browser_action": {
-		"default_icon": "icon.png"
+		"default_icon": "icon.jpg"
 	},
 	"optional_permissions": [
 		"http://*/*",
 		"https://*/*"
 	],
 	"icons": {
-		"128": "icon.png"
+		"128": "icon.jpg"
 	},
 	"options_ui": {
 		"chrome_style": true,
