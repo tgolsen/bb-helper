@@ -114,10 +114,10 @@ const run = async ({id, include, exclude, init, deinit}: FeatureDetails): Promis
 	try {
 		// Features can return `false` if they declare themselves as not enabled
 		if (await init() !== false) {
-			log('✅', id);
+			log('🤠', id);
 		}
 	} catch (error) {
-		console.log('❌', id);
+		console.log('🍣', id);
 		console.error(error);
 	}
 };

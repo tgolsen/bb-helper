@@ -1,6 +1,0 @@
-/* Hide unnecessary comment toolbar items */
-.rgh-clean-rich-text-editor md-mention,
-.rgh-clean-rich-text-editor md-ref,
-.rgh-clean-rich-text-editor markdown-toolbar > :nth-last-child(4) { /* H1, B, I */
-	display: none !important; /* Has to override `.d-inline-block` */
-}
