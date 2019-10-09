@@ -9,6 +9,7 @@
 		"storage",
 		"contextMenus",
 		"activeTab",
+		"tabs",
 		"https://github.com/*",
 		"https://api.github.com/*"
 	],
