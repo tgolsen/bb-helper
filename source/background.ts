@@ -25,18 +25,20 @@ browser.runtime.onMessage.addListener((message, {tab}) => {
 						if ("string" == typeof tabs[tabIndex].url && tabs[tabIndex].url == url) {
 							let tabId = tabs[tabIndex].id || 0;
 							chrome.tabs.update(tabId, {highlighted: true});
-							return "found tab " + tabId;
+							console.log("found tab " + tabId);
+							return true;
 						}
 					}
-					// // if no tabs open new
-					// browser.tabs.create({
-					// 	url,
-					// 	index: tab!.index + i + 1,
-					// 	active: true
-					// });
+					// if no tabs open new
+					browser.tabs.create({
+						url,
+						index: tab!.index + i + 1,
+						active: true
+					});
 				})
 			}
-			return "found no tabs";
+			console.log("found no tabs");
+			return false;
 		}
 	}
 });

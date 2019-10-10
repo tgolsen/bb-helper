@@ -19,11 +19,9 @@ function init(): void {
 	delegate('a', 'click', async (event) => {
 		console.log("reuse tab");
 		console.log(event);
-
 		debugger;
 
-		event.target
-
+		event.preventDefault();
 		chrome.runtime.sendMessage(
 			"",
 			{
@@ -31,8 +29,9 @@ function init(): void {
 			},
 			null,
 			function(response) {
-				console.log(response);
 				debugger;
+				event.preventDefault();
+				console.log(response);
 			}
 		);
 
