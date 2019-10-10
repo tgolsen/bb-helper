@@ -3,13 +3,40 @@ import addDomainPermissionToggle from 'webext-domain-permission-toggle';
 import './options-storage';
 
 browser.runtime.onMessage.addListener((message, {tab}) => {
-	if (message && Array.isArray(message.openUrls)) {
-		for (const [i, url] of (message.openUrls as string[]).entries()) {
-			browser.tabs.create({
-				url,
-				index: tab!.index + i + 1,
-				active: false
-			});
+	if (message){
+		if ( Array.isArray(message.openUrls)) {
+			for (const [i, url] of (message.openUrls as string[]).entries()) {
+				browser.tabs.create({
+					url,
+					index: tab!.index + i + 1,
+					active: false
+				});
+			}
+		}
+		if ( Array.isArray(message.openTabs)) {
+			debugger;
+			for (const [i, url] of (message.openTabs as string[]).entries()) {
+				chrome.tabs.query({}, function(tabs){
+					console.log(tabs);
+					console.log(i);
+					console.log(url);
+					for (let tabIndex in tabs) {
+						// If tab url is same then focus
+						if ("string" == typeof tabs[tabIndex].url && tabs[tabIndex].url == url) {
+							let tabId = tabs[tabIndex].id || 0;
+							chrome.tabs.update(tabId, {highlighted: true});
+							return "found tab " + tabId;
+						}
+					}
+					// // if no tabs open new
+					// browser.tabs.create({
+					// 	url,
+					// 	index: tab!.index + i + 1,
+					// 	active: true
+					// });
+				})
+			}
+			return "found no tabs";
 		}
 	}
 });
